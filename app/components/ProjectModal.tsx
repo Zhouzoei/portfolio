@@ -22,12 +22,16 @@ export default function ProjectModal({
   const icon = iconMap[project.tags[0]] || '\u{1F4BB}';
   const isPink = project.tags[0] === 'Max/MSP' || project.tags[0] === 'NLP';
 
+  // GitHub Pages 部署时添加 basePath 前缀
+  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/portfolio') ? '/portfolio' : '';
+
   // 合并所有可用图片：images > gif > image
-  const allImages = project.images?.length
+  const allImages = (project.images?.length
     ? project.images
     : project.gif
       ? [project.gif]
-      : [project.image];
+      : [project.image]
+  ).map((p) => `${basePath}${p}`);
 
   const [imgIndex, setImgIndex] = useState(0);
 
