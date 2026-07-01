@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #FFFFFF;
+  --bg: #FAFBFC;
+  --blue-50: #F0F6FF;
+  --blue-100: #D6E8FF;
+  --blue-200: #A8CCF0;
+  --blue-400: #5B9BD5;
+  --blue-600: #3578B0;
+  --pink-50: #FBF5FC;
+  --pink-100: #F3E8F8;
+  --pink-200: #E8D5F5;
+  --pink-400: #C9A0DC;
+  --text: #2C3E50;
+  --text-light: #6B7C8E;
+  --text-lighter: #98A8B8;
+  --border: #E8EDF2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+::selection { background: rgba(91, 155, 213, 0.2); color: var(--text); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--blue-200); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-400); }
+
+@layer components {
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .badge-tech {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.55rem;
+    border-radius: 10px;
+    background: var(--blue-50);
+    color: var(--blue-600);
+  }
+  .badge-life {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.55rem;
+    border-radius: 10px;
+    background: var(--pink-50);
+    color: var(--pink-400);
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.card-hover:hover {
+  border-color: var(--blue-100);
+  box-shadow: 0 3px 16px rgba(91,155,213,0.08);
+}
+
+/* Card translate on hover */
+.card-slide:hover {
+  transform: translateX(3px);
+}
+
+/* Project card hover */
+.project-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.project-card:hover {
+  border-color: var(--blue-100);
+  box-shadow: 0 4px 20px rgba(91,155,213,0.1);
+  transform: translateY(-3px);
+}
+
+/* Photo card hover */
+.photo-card {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 3px solid var(--white);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  cursor: pointer;
+}
+.photo-card:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: 0 12px 32px rgba(91,155,213,0.18);
+  z-index: 30 !important;
+}
+
+/* Nav link */
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--blue-600);
+}
