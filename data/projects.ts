@@ -61,7 +61,7 @@ export const projects: Project[] = [
     image: '/projects/unity-edu-1.png',
     images: ['/projects/unity-edu-1.png', '/projects/unity-edu-2.png'],
     featured: false,
-    details: '使用 Unity 引擎开发，通过互动叙事与游戏化机制传递性教育知识。注重用户体验设计，适配移动端。',
+    details: '使用 Unity 引擎开发，通过互动叙事与游戏化机制传递性教育知识。注重用户体验设计。',
   },
   {
     slug: 'max-msp-music-box',
